@@ -3,7 +3,7 @@
 ## Data
 Decompress `data.zip` to a `<ROOT>` directory.
 
-## Envigronment setup
+## Environment setup
 We run experiments on CentOS Linux 8 with Python 3.6.
 
 **Anaconda (CUDA 10.2)**
