@@ -1,4 +1,4 @@
-# Microbiome-based Disease Prediction with Multimodal Variational Information Bottleneck
+# Microbiome-based Disease Prediction with Multimodal Variational Information Bottlenecks
 
 ## Data
 Decompress `data.zip` to a `<ROOT>` directory.
