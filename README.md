@@ -1,6 +1,6 @@
 ## Microbiome-based disease prediction with multimodal variational information bottlenecks
 
-<img src="https://github.com/nec-research/microbiome-mvib/blob/master/docs/Fig1.png" width="35%">
+<img src="https://github.com/nec-research/microbiome-mvib/blob/master/docs/Fig1.png" width="40%">
 
 ## Data
 Decompress `data.zip` to a `<ROOT>` directory.
