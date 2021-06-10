@@ -42,3 +42,6 @@ python train.py --gpu 0 --lr 0.0001 --n-latents 256 --no-autoencoding --lambda-a
 ```
 python train_transfer_learning.py --gpu 0 --lr 0.0001 --n-latents 256 --no-autoencoding --lambda-abundance 0 --lambda-markers 0 --beta 0.00001 --bce --triplet --ensemble --data joint --root <ROOT>
 ```
+
+## Cite
+If you find this repository useful, please cite our paper: https://www.biorxiv.org/content/10.1101/2021.06.08.447505v1
