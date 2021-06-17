@@ -45,3 +45,13 @@ python train_transfer_learning.py --gpu 0 --lr 0.0001 --n-latents 256 --no-autoe
 
 ## Cite
 If you find this repository useful, please cite our paper: https://www.biorxiv.org/content/10.1101/2021.06.08.447505v1
+
+```
+@article{grazioli2021microbiome,
+  title={Microbiome-based disease prediction with multimodal variational information bottlenecks},
+  author={Grazioli, Filippo and Siarheyeu, Raman and Pileggi, Giampaolo and Meiser, Andrea},
+  journal={bioRxiv},
+  year={2021},
+  publisher={Cold Spring Harbor Laboratory}
+}
+```
