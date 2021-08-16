@@ -11,9 +11,9 @@ pip install .
 ```
 
 ## Train MVIB on custom data
-The directory [data/custom_data](data/custom_data) contains exemplary custom data:
-* [marker_CustomDisease.txt](data/custom_data/marker/marker_CustomDisease.txt) is a template for the strain-level marker profile;
-* [abundance_CustomDisease.txt](data/custom_data/abundance/abundance_CustomDisease.txt) is a template for the species-relative abundance profile.
+The (compressed) directory `data/custom_data` contains exemplary custom data:
+* `marker_CustomDisease.txt` is a template for the strain-level marker profile;
+* `abundance_CustomDisease.txt` is a template for the species-relative abundance profile.
 
 The script [train_custom_dataset.py](scripts/train_custom_dataset.py) shows how to use the main classes of `microbiome_mvib` for training
 MVIB on custom data. In the following, the usage of the main classes is documented.
@@ -28,8 +28,8 @@ device = 'cpu'
 dataset = CustomDataset(data_dir, disease, device, scale=True)
 ```
 The `CustomDataset` class is implemented as a typical [PyTorch dataset](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html).
-* `data_dir`: the path of the directory in which the data is stored. It expects the structure of [data/custom_data](data/custom_data)
-* `disease`: the name of the dataset/disease, which is expected in the name of the .txt file, e.g. [abundance_CustomDisease.txt](data/custom_data/abundance/abundance_CustomDisease.txt)
+* `data_dir`: the path of the directory in which the data is stored. It expects the structure of `data/custom_data`
+* `disease`: the name of the dataset/disease, which is expected in the name of the .txt file, e.g. `abundance_CustomDisease.txt`
 * `device`: a [PyTorch device](https://pytorch.org/docs/stable/tensor_attributes.html#torch.torch.device) on which the dataset is stored
 * `scale`: allows to standardize abundance features by removing the mean and scaling to unit variance
 
