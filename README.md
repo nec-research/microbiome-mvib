@@ -1,4 +1,7 @@
 # Microbiome-based Disease Prediction with Multimodal Variational Information Bottlenecks
+Implementation of the Multimodal Variational Information Bottleneck (MVIB) for microbiome-based disease prediction.
+
+<img src="https://github.com/nec-research/microbiome-mvib/blob/master/Fig1.png" width="50%">
 
 ## Installation
 ```microbiome_mvib``` can be installed as a Python package.
