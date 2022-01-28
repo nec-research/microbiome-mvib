@@ -189,7 +189,7 @@ def main(args):
     # downstream models
     models = []
     if args.down:
-        models = ['xgb', 'svm', 'rf']
+        models = ['svm', 'rf']
 
     if int(args.gpu) < 0:
         device = torch.device("cpu")
