@@ -150,7 +150,6 @@
 """
 Downstream classifiers for the embeddings.
 """
-import xgboost as xgb
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV, StratifiedKFold
@@ -246,35 +245,6 @@ def classification(X_train, X_test, y_train, y_test, args, models):
 
         rf_metrics = get_metrics(clf, y_true, y_prob, y_pred)
         metrics['rf'] = rf_metrics
-
-    if 'xgb' in models:
-        # XGBoost
-        xgb_hyper_parameters = {
-            'eta': [0.3, 0.7],
-            'objective': ['binary:logistic'],
-            'learning_rate': [0.05],
-            'max_depth': [6, 15],
-            'min_child_weight': [1, 10],
-            'subsample': [0.5, 0.8],
-            'colsample_bytree': [0.7, 1],
-            'n_estimators': [100, 200],
-        }
-
-        clf = GridSearchCV(
-            xgb.XGBClassifier(verbosity=1),
-            xgb_hyper_parameters,
-            cv=StratifiedKFold(n_splits=5, shuffle=True),
-            scoring='roc_auc',
-            n_jobs=args.n_jobs,
-            verbose=100
-        )
-        clf.fit(X_train, y_train)
-
-        y_true, y_pred = y_test, clf.predict(X_test)
-        y_prob = clf.predict_proba(X_test)
-
-        xgb_metrics = get_metrics(clf, y_true, y_prob, y_pred)
-        metrics['xgb'] = xgb_metrics
 
     for model in models:
         val_scores[model] = metrics[model]['cross_val_best_score']
