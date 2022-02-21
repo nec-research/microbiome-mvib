@@ -1,8 +1,0 @@
-rf_hyper_parameters = [
-	{
-		'n_estimators': [200, 400, 600, 800, 1000],
-		'max_features': ['sqrt', 'log2'],
-		'min_samples_leaf': [1, 2, 3, 4, 5],
-		'criterion': ['gini', 'entropy']
-	}
-]
