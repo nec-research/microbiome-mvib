@@ -39,7 +39,7 @@ def classification(X_train, X_test, y_train, y_test, args, models):
     """
     # scale features
     scaler = StandardScaler()
-    scaler.fit(np.concatenate((X_train, X_test), axis=0))
+    scaler.fit(X_train)
     X_train = scaler.transform(X_train)
     X_test = scaler.transform(X_test)
 
