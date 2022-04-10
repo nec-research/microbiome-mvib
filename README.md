@@ -32,7 +32,7 @@ dataset = CustomDataset(data_dir, disease, device, scale=True)
 ```
 The `CustomDataset` class is implemented as a typical [PyTorch dataset](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html).
 * `data_dir`: the path of the directory in which the data is stored. It expects the structure of `data/custom_data`
-* `disease`: the name of the dataset/disease, which is expected in the name of the .txt file, e.g. `abundance_CustomDisease.txt`
+* `disease`: the name of the dataset/disease, which is expected in the name of the .txt files, e.g. `disease = CustomDisease` for `abundance_CustomDisease.txt`
 * `device`: a [PyTorch device](https://pytorch.org/docs/stable/tensor_attributes.html#torch.torch.device) on which the dataset is stored
 * `scale`: allows to standardize abundance features by removing the mean and scaling to unit variance
 
@@ -135,11 +135,38 @@ model, val_best_roc_auc = trainer.load_checkpoint(state)
 * `triplet`: whether to optimize triplet loss or not
 * `autoencoding`: whether to optimize reconstruction loss of not
 
-When `autoencoding=True`, the loss of the Multimodal Variational Autoencoder
-is optimized as well. See paper:
+**Remark: Train a Multimodal Variational Autoencoder**
+
+When `autoencoding=True`, the ELBO loss of the Multimodal Variational Autoencoder (MVAE)
+is optimized as well. See paper by Wu and Goodman, NeurIPS 2018:
 https://papers.nips.cc/paper/2018/file/1102a326d5f7c9e04fc3c89d0ede88c9-Paper.pdf
 
-It is possible, to train the model in a pure self-supervised fashion by setting `bce=False`, `triplet=False`, `autoencoding=True`.
+It is possible to train the model in a pure self-supervised fashion by setting 
+`bce=False`, `triplet=False`, `autoencoding=True` in the `train()` method and 
+`monitor=min` in the `Trainer` object:
+
+```python
+trainer = Trainer(
+    model=model,
+    epochs=20,
+    lr=1e-5,
+    beta=1e-5,
+    lambda_abundance=0,
+    lambda_markers=0,
+    lambda_bce=1,
+    lambda_triplet=1,
+    checkpoint_dir='results',
+    monitor='min'
+)
+...
+state = trainer.train(
+    train_loader,
+    val_loader,
+    bce=False,
+    triplet=False,
+    autoencoding=True
+)
+```
 
 **Test the model**
 ```python
@@ -152,7 +179,7 @@ test_roc_auc = roc_auc_score(y_test, prediction)
 ```python
 mu, logvar = model.infer(dataset.abundance, dataset.markers)
 ```
-The stochastic encodings of the patients are modelled as multivariate Gaussian distributions:
+The stochastic encodings of the samples are modelled as multivariate Gaussian distributions:
 * `mu` is a torch.Tensor representing the mean vectors of the stochastic encodings
 * `logvar` is a torch.Tensor containing the log-variance vectors of such distributions 
 
