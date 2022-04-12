@@ -258,11 +258,17 @@ python time_benchmark.py --modality <A or M or AM or AMM>
 ## Cite
 If you find this repository useful, please cite our paper:
 ```
-@article{grazioli2021microbiome,
-  title={Microbiome-based disease prediction with multimodal variational information bottlenecks},
-  author={Grazioli, Filippo and Siarheyeu, Raman and Pileggi, Giampaolo and Meiser, Andrea},
-  journal={bioRxiv},
-  year={2021},
-  publisher={Cold Spring Harbor Laboratory}
+@article{10.1371/journal.pcbi.1010050,
+    doi = {10.1371/journal.pcbi.1010050},
+    author = {Grazioli, Filippo AND Siarheyeu, Raman AND Alqassem, Israa AND Henschel, Andreas AND Pileggi, Giampaolo AND Meiser, Andrea},
+    journal = {PLOS Computational Biology},
+    publisher = {Public Library of Science},
+    title = {Microbiome-based disease prediction with multimodal variational information bottlenecks},
+    year = {2022},
+    month = {04},
+    volume = {18},
+    url = {https://doi.org/10.1371/journal.pcbi.1010050},
+    pages = {1-27},
+    number = {4},
 }
 ```
