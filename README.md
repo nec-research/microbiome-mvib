@@ -1,5 +1,4 @@
-## Microbiome-based Disease Prediction with Multimodal Variational Information Bottlenecks
-Implementation of the Multimodal Variational Information Bottleneck (MVIB) for microbiome-based disease prediction, published at PLOS Computational Biology: [link to paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010050)
+[Microbiome-based disease prediction with multimodal variational information bottlenecks, Grazioli et al., PLOS Computational Biology 2022](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010050)
 
 <img src="https://github.com/nec-research/microbiome-mvib/blob/master/Fig1.png" width="50%">
 
