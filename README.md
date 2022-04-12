@@ -1,7 +1,7 @@
 ## microbiome-mvib
 Implementation of the Multimodal Variational Information Bottleneck (MVIB) for microbiome-based disease prediction, proposed in the PLOS Computational Biology paper [Microbiome-based disease prediction with multimodal variational information bottlenecks](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010050)
 
-<img src="https://github.com/nec-research/microbiome-mvib/blob/master/Fig1.png" width="30%">
+<img src="https://github.com/nec-research/microbiome-mvib/blob/master/Fig1.png" width="40%">
 
 ## Installation
 ```microbiome_mvib``` can be installed as a Python package.
